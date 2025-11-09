@@ -45,7 +45,7 @@ app.post('/send', ({ api, body, set }) => {
         config: {
           tts: false,
           stripSSML: true,
-          stopAll: true,
+          stopAll: false,
           excludeTypes: ['block', 'debug', 'flow'],
         },
       }
