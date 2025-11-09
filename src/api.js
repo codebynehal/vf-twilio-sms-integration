@@ -16,7 +16,7 @@ export const Dialog = {
       config: {
         tts: false,
         stripSSML: true,
-        stopAll: true,
+        stopAll: false,
         excludeTypes: ['block', 'debug', 'flow'],
       },
     }
@@ -27,11 +27,17 @@ export const Dialog = {
         requestData.action = { type: 'no-reply' }
       } else {
         requestData.action = { type: 'text', payload: body.Body }
+           requestData.state = {
+            variables: {
+              platform: "sms"
+            },
+          }
         if (body?.MediaContentType0?.includes('image')) {
           console.log('Add media URL')
           requestData.state = {
             variables: {
               imageUrl: body.MediaUrl0,
+              platform:"sms"
             },
           }
         }
