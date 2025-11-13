@@ -21,7 +21,7 @@ export const Dialog = {
       },
     }
 
-    if (!customRequestData) {
+    // if (!customRequestData) {
       if (!body) {
         console.log('No Reply')
         requestData.action = { type: 'no-reply' }
@@ -42,7 +42,7 @@ export const Dialog = {
           }
         }
       }
-    }
+    // }
     return axios
       .post(
         `https://general-runtime.voiceflow.com/state/user/${encodeURI(
