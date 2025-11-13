@@ -12,7 +12,7 @@ export const Dialog = {
   interact: async function (from, to, body, set) {
     clearTimeout(noreplyTimeout)
 
-    let requestData = customRequestData || {
+    let requestData = {
       config: {
         tts: false,
         stripSSML: true,
